@@ -42,10 +42,8 @@ Ruby
 * Prefer `private` when indicating scope. Use `protected` only with comparison
   methods like `def ==(other)`, `def <(other)`, and `def >(other)`.
 * Prefer `if` over `unless`.
-* Use helper methods to [turn a negative conditional into a positive one][if].
 
 [Bundler binstubs]: https://github.com/sstephenson/rbenv/wiki/Understanding-binstubs
-[if]: /best-practices/samples/ruby.rb#L3
 
 Ruby Gems
 ---------
