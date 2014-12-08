@@ -281,7 +281,9 @@ Ember
 * Prefer adding properties to controllers instead of models.
 * Don't use jQuery outside of views and components.
 * Prefer to use predefined `Ember.computed.*` functions when possible.
-* Prefer initializers and dependency injection over global variables
+* Avoid global variables. Prefer initializers and dependency injection.
+* Prefer setting values on the `application` argument of an initializer over
+  declaring variables on `window`.
 
 Angular
 -------
