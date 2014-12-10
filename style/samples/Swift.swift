@@ -1,7 +1,7 @@
 
 import Foundation // or not
 
-// Closures -----------------------------------------------------------
+// MARK: Closures
 
 // Use typealias when closures are referenced in multiple places
 typealias CoolClosure = (foo: Int) -> Bool
@@ -24,7 +24,7 @@ let cool = yTown(5) { foo in
     }
 }
 
-// Optionals -----------------------------------------------------------
+// MARK: Optionals
 
 var maybe: Bool?
 
@@ -45,7 +45,7 @@ func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndex
     return .None
 }
 
-// Enums --------------------------------------------------------------
+// MARK: Enums
 
 enum Response {
     case Success(NSData)
