@@ -16,11 +16,8 @@
 @end
 
 // Use static NSString points to consts for string constants
-static NSString *const TBConstantName = @"Constant";
+static NSString * const TBConstantName = @"Constant";
 static NSUInteger const TBNumberOfCardsInDeck = 52;
-
-// Prepend constants with 'k' when being used as keys
-static NSString *const kFirstName = @"FirstName";
 
 @implementation ClassName
 
@@ -49,7 +46,7 @@ static NSString *const kFirstName = @"FirstName";
 - (void)shuffleCards
 {
     // Objective-C literals are your friend
-    NSDictionary *themeColors = @{kRedColor: [UIColor redColor], kBlueColor: [UIColor blueColor]};
+    NSDictionary *themeColors = @{redColor: [UIColor redColor], blueColor: [UIColor blueColor]};
     NSArray *robots = @[@"Ralph", @"Bender", @"The Iron Giant"];
 
     NSMutableArray *deckOfCards = [NSMutableArray array];
