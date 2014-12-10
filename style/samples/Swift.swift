@@ -41,7 +41,7 @@ func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndex
             return cell;
         }
     }
-    
+
     return .None
 }
 
@@ -52,8 +52,13 @@ enum Response {
     case Failure(NSError)
 }
 
-// when the type is known you can let the compiler infer
+// When the type is known you can let the compiler infer
 let response: Response = .Success(NSData())
+
+func doSomeWork() -> Response {
+    let data = ...
+    return .Success(data)
+}
 
 switch response {
 case let .Success(data):
