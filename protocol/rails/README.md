@@ -6,19 +6,15 @@ A guide for writing great web apps.
 Set Up Laptop
 -------------
 
-Set up your laptop with [this script](https://github.com/thoughtbot/laptop)
-and [these dotfiles](https://github.com/thoughtbot/dotfiles).
+Set up your laptop with [this script](https://github.com/wavetronix/laptop)
+and [these dotfiles](https://github.com/wavetronix/dotfiles).
 
 Create App
 ----------
 
-Get Suspenders.
-
-    gem install suspenders
-
 Create the app.
 
-    suspenders app --heroku true --github organization/app
+    rails new app_name -B -d postgresql
 
 Set Up App
 ----------
