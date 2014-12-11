@@ -121,12 +121,9 @@ Sass
 
 ### Organization
 
-* Use Bourbon for a Sass Library.
-* Use Neat for a grid framework.
-* Use Bitters / Base folder for style on HTML tags, global variables, global extends and global mixins.
 * Use Normalize as a browser reset.
 * Use HTML structure for ordering of selectors. Don't just put styles at the bottom of the Sass file.
-* Prefer the same file structure that is found in app/views.
+* Prefer the same file structure that is found in app/views. _(This needs to be discussed and decided.)_
 * Avoid having files longer than 100 lines.
 
 CoffeeScript
@@ -149,21 +146,6 @@ CoffeeScript
   private variables and functions.
 * Use zero spaces before and one space after the colon in a colon assignment
   (i.e. classes, objects).
-
-Backbone
---------
-
-[Sample](samples/backbone.coffee)
-
-* Organize all objects in one `window.App` namespace.
-* Name collections the plural version of the model.
-* Name models without a suffix.
-* Name the router `App.Router`.
-* Name views with a `View` suffix.
-
-Ember
------
-* Don't put a space between the opening handlebars braces and the variable.
 
 Ruby
 ----
@@ -265,6 +247,8 @@ Rails Routes
 Background Jobs
 ---------------
 
+_(This section may be unnecessary with ActiveJob in Rails 4.2.)_
+
 * Define a `PRIORITY` constant at the top of delayed job classes.
 * Define two public methods: `self.enqueue` and `perform`.
 * Put delayed job classes in `app/jobs`.
@@ -279,6 +263,8 @@ Email
 
 Testing
 -------
+
+_(Rewrite this section for Minitest instead of Rspec.)_
 
 * Avoid the `private` keyword in specs.
 * Avoid checking boolean equality directly. Instead, write predicate methods and
@@ -305,22 +291,27 @@ Testing
 * Place helper methods for feature specs directly in a top-level `Features`
   module.
 * Use Capybara's `feature/scenario` DSL.
-* Use names like `ROLE_ACTION_spec.rb`, such as
-  `user_changes_password_spec.rb`, for feature spec file names.
+* Use names like `ROLE_ACTION_test.rb`, such as
+  `user_changes_password_test.rb`, for feature spec file names.
 * Use only one `feature` block per feature spec file.
 * Use scenario titles that describe the success and failure paths.
-* Use spec/features directory to store feature specs.
-* Use spec/support/features for support code related to feature specs.
+* Use test/features directory to store feature specs.
+* Use test/support/features for support code related to feature specs.
 
 #### Factories
+
+_(Rewrite this section for Minfacture instead of FactoryGirl.)_
 
 * Order `factories.rb` contents: sequences, traits, factory definitions.
 * Order factory attributes: implicit attributes, explicit attributes,
   child factory definitions. Each section's attributes are alphabetical.
 * Order factory definitions alphabetically by factory name.
-* Use one factories.rb file per project.
+* Use one file for each factory.
+* Group derivative factories together in one file (`admin` is just a `user` with the admin role).
 
 #### Unit Tests
+
+_(Rewrite this for Minitest rather than Rspec.)_
 
 [Sample](samples/testing.rb)
 
@@ -337,64 +328,6 @@ Testing
 
 [Imperative mood]: http://en.wikipedia.org/wiki/Imperative_mood
 
-Objective-C
------------
-
-[Sample](samples/ObjectiveC.m)
-
-* Place `#import`s into the prefix header (`ProjectName-Prefix.pch`) only if
-  used in _many_ files.
-* Place `.xib` files under `Resources/Nibs` and their associated view files in
-  `Classes/Views`.
-* Order `#import` statements alphabetically.
-* Order `@class` directives alphabetically.
-* Order `@property` modifiers: memory management, atomicity, writability.
-* Leave out `@property` modifiers unless needed, `nonatomic` is the only one
-  needed in most cases except connecting views with IB in which case `weak` may
-  also be needed.
-* Prefer `@class` to `#import` when referring to external classes in a public
-  `@interface`.
-* Prefer `@property` to declaring instance variables.
-* Prefix class names with a 2 or 3 letter project acronym.
-* Prefix string constants being used as keys with 'k'.
-* Remove `#import` statements for `Foundation` and `UIKit` in new project
-  templates.
-* Separate methods by function using `#pragma mark - <Section Name>`
-* Separate sections into subsections using `#pragma mark <Subsection Name>`
-* Use `@[arrayObject]`, `@{@"key" : value}`, `@(YES or NO)`, and `@5.0`
-  literals.
-* Use `@interface ClassName ()` to declare private properties.
-* Use `lowerCamelCase` for method names.
-* Use `NSAssert` in methods that require the presence of certain arguments.
-* Write methods using the happy path. Indent the exceptional cases. Keep the
-  optimal case in the left-most column.
-* Prefer `enumerateObjectsUsingBlock:` when looping through arrays.
-* Always use braces with control and loop blocks unless it can easily fit on
-  one line.
-* Place opening brace for control and loop blocks on same line.
-* Prefer `NSInteger`, `CGFloat`, and similar macros over `int`, `float`, and
-  other base types.
-* Prefer *Auto Layout* for view layouts and constraints.
-
-Swift
------
-
-[Sample](samples/Swift.swift)
-
-* Keep up with the Objective-C style guide above. Will highlight differences
-  here.
-* Use `let` whenever possible to make immutable variables
-* Name all parameters in functions and enum cases
-* Use trailing closures
-* Let the compiler infer the type whenever possible
-
-Python
-------
-
-* Follow [PEP 8].
-
-[PEP 8]: http://www.python.org/dev/peps/pep-0008/
-
 Shell
 -----
 
@@ -406,28 +339,3 @@ Shell
 * Use `snake_case` for variable names and `ALLCAPS` for environment variables.
 * Use single quotes for strings that don't contain escapes or variables.
 * Use two-space indentation.
-
-Haskell
--------
-
-[Sample](samples/haskell.hs)
-
-* Break long expressions before operators or keywords.
-* Break long type signatures between arguments.
-* Order imports in three sections, separating each by a blank line:
-  [standard libraries], third-party libraries, application modules.
-  Within each section, alphabetize the imports and place qualified
-  imports last.
-* Use comma-first style exports, records, and lists.
-* Use four-space indentation except the `where` keyword which is
-  indented two spaces. [Example].
-
-Android
--------
-
-* Properties of views should be alphabetized, with the exception of `id`,
-  `layout_width`, and `layout_height` which should be placed first in that
-  order.
-
-[standard libraries]: http://www.haskell.org/ghc/docs/latest/html/libraries/index.html
-[Example]: /style/samples/haskell.hs#L41
