@@ -58,18 +58,6 @@ class SomeClass
     ]
   end
 
-  def invoke_method_with_arguments_on_multiple_lines
-    some_method(
-      i_am_a_long_variable_name_that_i_will_never_fit_on_one_line_with_others,
-      two,
-      three
-    )
-
-    # Bad:
-    some_method(one,
-                two)
-  end
-
   def method_which_uses_infix_operators
     left + middle - right
   end
@@ -89,7 +77,7 @@ class SomeClass
   end
 
   def method_that_uses_factory
-    user = @user_factory.new
+    user = user_factory.new
     user.ensure_authenticated!
   end
 
@@ -97,15 +85,22 @@ class SomeClass
     method_body
   end
 
-  protected
-
-  attr_reader :foo
-  attr_accessor :bar
-  attr_writer :baz
+  def memoized_method
+    @_memoized_method ||= 1
+  end
 
   private
 
+  attr_reader :foo, :user_factory
+  attr_accessor :bar
+  attr_writer :baz
+
   def complex_condition?
     part_one? && part_two?
+  end
+end
+
+module A
+  class B
   end
 end

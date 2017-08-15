@@ -3,21 +3,32 @@ Style
 
 A guide for programming in style.
 
-Use [Hound] to automatically review your code and comment on GitHub pull
-requests for violations of the Ruby portions of this style guide.
+Use [Hound] to automatically review your
+GitHub pull requests for
+style guide violations.
 
 [Hound]: https://houndci.com
 
-Git
----
+In addition to the general guidelines below, we also have the following more
+detailed, language/framework-specific style guides:
 
-* Avoid merge commits by using a [rebase workflow].
-* Prefix feature branch names with your initials.
-* Squash multiple trivial commits into a single commit.
-* Write a [good commit message].
-
-[rebase workflow]: /protocol/git#merge
-[good commit message]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+* [Android](android)
+* [Backbone](backbone)
+* [CoffeeScript](coffeescript)
+* [Ember.js](ember)
+* [ERb](erb)
+* [Git](git)
+* [Haskell](haskell)
+* [HTML](html)
+* [JavaScript](javascript)
+* [Objective-C](objective_c)
+* [Python](python)
+* [Rails](rails)
+* [Ruby](ruby)
+* [Sass](sass)
+* [Shell](shell)
+* [Swift](swift)
+* [Testing](testing)
 
 Formatting
 ----------
@@ -28,8 +39,6 @@ Formatting
 * Don't include spaces after `(`, `[` or before `]`, `)`.
 * Don't misspell.
 * Don't vertically align tokens on consecutive lines.
-* If you break up an argument list, keep the arguments on their own lines and
-  closing parenthesis on its own line.
 * If you break up a hash, keep the elements on their own lines and closing curly
   brace on its own line.
 * Indent continued lines two spaces.
@@ -43,12 +52,13 @@ Formatting
 * Use spaces around operators, except for unary operators, such as `!`.
 * Use spaces after commas, after colons and semicolons, around `{` and before
   `}`.
-* Use [Unix-style line endings] (`\n`).
+* Use [Unix-style line endings][newline explanation] (`\n`).
 * Use [uppercase for SQL key words and lowercase for SQL identifiers].
 
-[dot guideline example]: /style/samples/ruby.rb#L11
+
+[dot guideline example]: /style/ruby/sample.rb#L11
 [uppercase for SQL key words and lowercase for SQL identifiers]: http://www.postgresql.org/docs/9.2/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS
-[Unix-style line endings]: http://unix.stackexchange.com/questions/23903/should-i-end-my-text-script-files-with-a-newline
+[newline explanation]: http://unix.stackexchange.com/questions/23903/should-i-end-my-text-script-files-with-a-newline
 
 Naming
 ------
@@ -72,6 +82,7 @@ Organization
   they call.
 * Order methods so that methods are as close as possible to other methods they
   call.
+<<<<<<< HEAD
 
 Sass
 ----
@@ -339,3 +350,5 @@ Shell
 * Use `snake_case` for variable names and `ALLCAPS` for environment variables.
 * Use single quotes for strings that don't contain escapes or variables.
 * Use two-space indentation.
+=======
+>>>>>>> upstream/master

@@ -24,8 +24,6 @@ Create a local feature branch based off master.
     git pull
     git checkout -b <branch-name>
 
-Prefix the branch name with your initials.
-
 Rebase frequently to incorporate upstream changes.
 
     git fetch origin
@@ -49,8 +47,9 @@ Write a [good commit message]. Example format:
 
     http://project.management-system.com/ticket/123
 
-If you've created more than one commit, use a rebase to squash them into
-cohesive commits with good messages:
+If you've created more than one commit,
+[use `git rebase` interactively](https://help.github.com/articles/about-git-rebase/)
+to squash them into cohesive commits with good messages:
 
     git rebase -i origin/master
 
@@ -100,7 +99,7 @@ Force push your branch. This allows GitHub to automatically close your pull
 request and mark it as merged when your commit(s) are pushed to master. It also
  makes it possible to [find the pull request] that brought in your changes.
 
-    git push --force origin <branch-name>
+    git push --force-with-lease origin <branch-name>
 
 View a list of new commits. View changed files. Merge branch into master.
 
